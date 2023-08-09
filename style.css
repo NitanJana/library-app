@@ -1,5 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 #books {
   background-color: aqua;
-  width: 80vw;
-  height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card>* {
+  font-size: 1.5rem;
+  color: rgb(104, 104, 104);
+}
+
+.book-title {
+
+}
+
+.book-author {
+}
+
+.book-page-number {
+}
+
+.book-reading-status {
 }
