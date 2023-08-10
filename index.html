@@ -12,40 +12,28 @@
       <form>
         
         <div>
-          <label for="title">
-            Title
-          </label>
-          <input id="title" name="title" type="text" />
+          <input id="title" name="title" placeholder="Title" type="text" />
         </div>
       <form>
 
         <div>
-          <label for="author">
-            Author
-          </label>
-          <input id="author" name="author" type="text" />
+          <input id="author" name="author" placeholder="Author" type="text" />
         </div>
       <form>
 
         <div>
-          <label for="pages">
-            Pages
-          </label>
-          <input id="pages" name="pages" type="text" />
+          <input id="pages" name="pages" placeholder="Pages" type="text" />
         </div>
       <form>
 
         <div>
-          <label for="read">
-            read
-          </label>
-          <input id="read" name="read" type="text" />
+          <input id="read" name="read" placeholder="Read" type="text" />
         </div>
         
-        <div>
-          <button id="cancelBtn" value="cancel" formmethod="dialog">Cancel</button>
-          <button id="resetBtn">Reset</button>
-          <button id="confirmBtn" value="default">Confirm</button>
+        <div id="modalButtons">
+          <button id="cancelBtn" value="cancel" formmethod="dialog"><img src="./icons/close.svg" alt=""></button>
+          <button id="resetBtn"><img src="./icons/restart.svg" alt=""></button>
+          <button id="confirmBtn" value="default"><img src="./icons/check.svg" alt=""></button>
         </div>
       </form>
     </dialog>
