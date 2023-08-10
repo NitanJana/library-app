@@ -112,3 +112,15 @@ form button img{
   font-size: 1.2rem;
   color: rgb(104, 104, 104);
 }
+
+.delete-icon-btn {
+  width: 2rem;
+  border: none;
+  background-color: var(--red);
+  align-self: flex-end;
+}
+
+.delete-icon-img {
+  content: url('./icons/delete-empty.svg');
+  filter: invert();
+}

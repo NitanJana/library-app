@@ -39,28 +39,41 @@ function Book(title, author, pageNumber, readStatus) {
 
 
 function addBookToLibrary(title,author,pages,read) {
-  let temp = new Book(title,author,pages,read);
-  myLibrary.push(temp);
+  let book = new Book(title,author,pages,read);
+  myLibrary.push(book);
 
   let bookTitle = document.createElement('div');
   let bookAuthor = document.createElement('div');
   let bookPageNumber = document.createElement('div');
   let bookReadingStatus = document.createElement('div');
 
-  bookTitle.textContent = temp.title;
-  bookAuthor.textContent = temp.author;
-  bookPageNumber.textContent = temp.pageNumber;
-  bookReadingStatus.textContent = temp.readStatus;
+  bookTitle.textContent = book.title;
+  bookAuthor.textContent = book.author;
+  bookPageNumber.textContent = book.pageNumber;
+  bookReadingStatus.textContent = book.readStatus;
   
   bookTitle.className = 'book-title';
   bookAuthor.className = 'book-author';
   bookPageNumber.className = 'book-page-number';
   bookReadingStatus.className = 'book-reading-status';
 
+  const deleteButton = document.createElement('button');
+  const deleteIcon = document.createElement('img');
+
+  deleteButton.className = 'delete-icon-btn';
+  deleteIcon.className = 'delete-icon-img';
+  deleteButton.appendChild(deleteIcon);
+
+
+  deleteButton.addEventListener('click', (e) => {
+    e.target.parentNode.parentNode.remove();
+    myLibrary = myLibrary.filter(function (el) { return el.title != book.title; });
+  });
+
   let card = document.createElement('div');
   card.className = 'card';
 
-  card.append(bookTitle, bookAuthor, bookPageNumber, bookReadingStatus);
+  card.append(bookTitle, bookAuthor, bookPageNumber, bookReadingStatus,deleteButton);
   books.appendChild(card);
 }
 
