@@ -17,6 +17,20 @@ body {
   gap: 1rem;
 }
 
+#newBookModal {
+  margin: auto;
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+form > div {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+  margin: 1rem;
+}
+
 #new-book {
   align-self: end;
   background-color: green;

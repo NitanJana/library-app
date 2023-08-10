@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Library</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="./app.js" defer></script>
-</head>
-<body>
-  <button id="new-book">
-    <img src="./icons/plus.svg" alt="New Book">
-  </button>
-  <div id="books">
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <dialog id="newBookModal">
+      <form>
+        
+        <div>
+          <label for="title">
+            Title
+          </label>
+          <input id="title" name="title" type="text" />
+        </div>
+      <form>
+
+        <div>
+          <label for="author">
+            Author
+          </label>
+          <input id="author" name="author" type="text" />
+        </div>
+      <form>
+
+        <div>
+          <label for="pages">
+            Pages
+          </label>
+          <input id="pages" name="pages" type="text" />
+        </div>
+      <form>
+
+        <div>
+          <label for="read">
+            read
+          </label>
+          <input id="read" name="read" type="text" />
+        </div>
+        
+        <div>
+          <button id="cancelBtn" value="cancel" formmethod="dialog">Cancel</button>
+          <button id="resetBtn">Reset</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+        </div>
+      </form>
+    </dialog>
+    <button id="new-book">
+      <img src="./icons/plus.svg" alt="New Book" />
+    </button>
+    <div id="books"></div>
+  </body>
 </html>
