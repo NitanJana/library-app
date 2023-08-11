@@ -85,10 +85,16 @@ form button img{
 }
 
 #new-book {
-  align-self: end;
+  align-self: center;
   background-color: var(--dark-green);
   border: none;
   border-radius: 0.2rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
 }
 
 #new-book:active {
