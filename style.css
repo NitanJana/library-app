@@ -108,8 +108,8 @@ form button img{
 
 #books {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
 .card {
@@ -120,6 +120,7 @@ form button img{
   flex-direction: column;
   align-items: center;
   border: 1px solid var(--dark-green);
+  gap: 10px;
 }
 
 .card>* {
@@ -150,6 +151,7 @@ form button img{
 .delete-icon-btn {
   width: 2rem;
   border: none;
+  border-radius: 50%;
   background-color: var(--red);
   align-self: flex-end;
 }
