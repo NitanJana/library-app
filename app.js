@@ -63,7 +63,7 @@ function addBookToLibrary(title,author,pages,read) {
   let bookTitle = document.createElement('div');
   let bookAuthor = document.createElement('div');
   let bookPageNumber = document.createElement('div');
-  let bookReadingStatus = document.createElement('div');
+  let bookReadingStatus = document.createElement('button');
 
   bookTitle.textContent = book.title;
   bookAuthor.textContent = book.author;
@@ -73,7 +73,29 @@ function addBookToLibrary(title,author,pages,read) {
   bookTitle.className = 'book-title';
   bookAuthor.className = 'book-author';
   bookPageNumber.className = 'book-page-number';
-  bookReadingStatus.className = 'book-reading-status';
+  // bookReadingStatus.className = 'book-reading-status';
+  console.log(book.readStatus);
+  if (book.readStatus === 'unread') {
+    bookReadingStatus.className = 'book-reading-status-red';
+    bookReadingStatus.value = 'unread';
+  } else if (book.readStatus === 'read') {
+    bookReadingStatus.className = 'book-reading-status-green';
+    bookReadingStatus.value = 'read';
+  }
+
+  bookReadingStatus.addEventListener('click', (e) => {
+  e.preventDefault();
+  
+  if (e.target.value === 'unread') {
+    e.target.value = 'read';
+    e.target.innerText = 'Read';
+    e.target.style.backgroundColor = 'var(--dark-green)';
+  } else if (e.target.value === 'read') {
+    e.target.value = 'unread';
+    e.target.innerText = 'Unread';
+    e.target.style.backgroundColor = 'var(--red)';
+  }
+});
 
   const deleteButton = document.createElement('button');
   const deleteIcon = document.createElement('img');
@@ -96,9 +118,7 @@ function addBookToLibrary(title,author,pages,read) {
 }
 
 
+// addBookToLibrary('The Hobbit', 'J.R.R Tolkien', '295', 'Unread');
 
-
-addBookToLibrary('The Hobbit', 'J.R.R Tolkien', '295', 'Not read yet');
-
-addBookToLibrary('Book 2','author2','20','read');
+// addBookToLibrary('Book 2','author2','20','Read');
 

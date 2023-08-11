@@ -55,13 +55,13 @@ form input {
 
 #read {
   height: 2rem;
-  justify-content: stretch;
   font-size: 1.2rem;
   width: 100%;
   border-radius: 1rem;
   color: white;
   background-color: var(--red);
 }
+
 
 form button {
   border: none;
@@ -121,6 +121,26 @@ form button img{
   color: rgb(104, 104, 104);
 }
 
+.book-reading-status-red {
+  height: 2rem;
+  font-size: 1.2rem;
+  width: 10rem;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  background-color: var(--red);
+
+}
+.book-reading-status-green {
+  height: 2rem;
+  font-size: 1.2rem;
+  width: 10rem;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  background-color: var(--dark-green);
+
+}
 .delete-icon-btn {
   width: 2rem;
   border: none;
