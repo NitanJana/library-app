@@ -53,6 +53,15 @@ form input {
   text-align: center;
 }
 
+#read {
+  height: 2rem;
+  justify-content: stretch;
+  font-size: 1.2rem;
+  width: 100%;
+  border-radius: 1rem;
+  color: white;
+  background-color: var(--red);
+}
 
 form button {
   border: none;
@@ -67,7 +76,7 @@ form button {
 }
 
 #confirmBtn {
-  background-color: var(--green);
+  background-color: var(--dark-green);
 }
 
 form button img{
@@ -92,11 +101,9 @@ form button img{
 }
 
 #books {
-  background-color: aqua;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  padding: 1rem;
 }
 
 .card {
@@ -106,6 +113,7 @@ form button img{
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid var(--dark-green);
 }
 
 .card>* {

@@ -5,6 +5,22 @@ const confirmBtn = document.querySelector('#confirmBtn');
 const cancelBtn = document.querySelector('#cancelBtn');
 const resetBtn = document.querySelector('#resetBtn');
 
+const readBtn = document.querySelector('#read');
+
+readBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  
+  if (e.target.value === 'unread') {
+    e.target.value = 'read';
+    e.target.innerText = 'Read';
+    e.target.style.backgroundColor = 'var(--dark-green)';
+  } else if (e.target.value === 'read') {
+    e.target.value = 'unread';
+    e.target.innerText = 'Unread';
+    e.target.style.backgroundColor = 'var(--red)';
+  }
+});
+
 newBook.addEventListener('click', () => {
   newBookModal.showModal();
 });
@@ -14,12 +30,14 @@ resetBtn.addEventListener('click', (event) => {
 })
 
 confirmBtn.addEventListener('click', (event) => {
-  const inputTitle = document.querySelector('#title').value;
-  const inputAuthor = document.querySelector('#author').value;
-  const inputPages = document.querySelector('#pages').value;
-  const inputRead = document.querySelector('#read').value;
+  const inputTitle = document.querySelector('#title');
+  const inputAuthor = document.querySelector('#author');
+  const inputPages = document.querySelector('#pages');
+  const inputRead = document.querySelector('#read');
 
-  addBookToLibrary(inputTitle,inputAuthor,inputPages,inputRead);
+  
+
+  addBookToLibrary(inputTitle.value,inputAuthor.value,inputPages.value,inputRead.value);
   event.preventDefault();
   newBookModal.close();
   document.querySelector("form").reset();
@@ -76,6 +94,8 @@ function addBookToLibrary(title,author,pages,read) {
   card.append(bookTitle, bookAuthor, bookPageNumber, bookReadingStatus,deleteButton);
   books.appendChild(card);
 }
+
+
 
 
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', '295', 'Not read yet');
