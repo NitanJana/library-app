@@ -25,6 +25,9 @@ newBook.addEventListener('click', () => {
   newBookModal.showModal();
 });
 
+cancelBtn.addEventListener('click', (event) => {
+  newBookModal.close();
+})
 resetBtn.addEventListener('click', (event) => {
   document.querySelector("form").reset();
 })
@@ -35,12 +38,24 @@ confirmBtn.addEventListener('click', (event) => {
   const inputPages = document.querySelector('#pages');
   const inputRead = document.querySelector('#read');
 
-  
+  if (inputTitle.value === '') {
+    inputTitle.classList.add('empty-input');
+  }
+  if (inputAuthor.value === '') {
+    inputAuthor.classList.add('empty-input');
+  }
+  if (inputPages.value === '') {
+    inputPages.classList.add('empty-input');
+  }
 
-  addBookToLibrary(inputTitle.value,inputAuthor.value,inputPages.value,inputRead.value);
-  event.preventDefault();
-  newBookModal.close();
-  document.querySelector("form").reset();
+  if (inputTitle.value !== '' && inputAuthor.value !== '' && inputPages.value !== '') {
+    addBookToLibrary(inputTitle.value,inputAuthor.value,inputPages.value,inputRead.value);
+    event.preventDefault();
+    newBookModal.close();
+    document.querySelector("form").reset();
+    
+  }
+
 });
 
 
@@ -73,8 +88,7 @@ function addBookToLibrary(title,author,pages,read) {
   bookTitle.className = 'book-title';
   bookAuthor.className = 'book-author';
   bookPageNumber.className = 'book-page-number';
-  // bookReadingStatus.className = 'book-reading-status';
-  console.log(book.readStatus);
+  
   if (book.readStatus === 'unread') {
     bookReadingStatus.className = 'book-reading-status-red';
     bookReadingStatus.value = 'unread';
